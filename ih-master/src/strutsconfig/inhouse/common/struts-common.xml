@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="common" namespace="/" extends="json-default">
+		<interceptors>
+			<interceptor name="InitialInterceptor" class="com.cct.inhouse.web.interceptor.InitialInterceptor" />
+			<interceptor name="LoginInterceptor" class="com.cct.inhouse.web.interceptor.LoginInterceptor" />
+			<interceptor name="TokenInterceptor" class="com.cct.inhouse.web.interceptor.TokenInterceptor" />
+			<interceptor name="ServerValidatorInterceptor" class="com.cct.web.interceptor.ServerValidatorInterceptor" />
+			<interceptor-stack name="DefaultInterceptor">
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="InitialInterceptor"/>
+				<interceptor-ref name="LoginInterceptor"/>
+				<interceptor-ref name="TokenInterceptor">
+               		<param name="excludeMethods">*</param> <!-- เมธอดที่ไม่ทำการตรวจสอบ token ถ้าไม่ใส่ ทุกเมธอดจะถูกตรวจสอบทั้งหมด-->
+               		<param name="includeMethods">add*,edit*,delete*,update*</param><!-- เมธอดที่ทำการตรวจสอบ token -->
+    			</interceptor-ref>
+    			<interceptor-ref name="ServerValidatorInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="DefaultInterceptor"></default-interceptor-ref>
+		
+		<global-results>
+			<result name="searchResultAjax" type="json">
+				<param name="root">model</param>
+				<param name="ignoreHierarchy">false</param>
+			</result>
+			<result name="filemeta" type="json">
+				<param name="root">model.fileMeta</param>
+			</result>
+			
+			<result name="invalidRequest">/exception-dev.jsp</result>
+			
+			<result name="blockingRequest" type="redirect">
+				<param name="location">%{#application.CONTEXT_OWNER}/gotoServiceListPermission.action</param>
+			</result>
+			<result name="home" type="redirect">
+				<param name="location">%{#application.CONTEXT_OWNER}/gotoServiceListPermission.action</param>
+			</result>
+			<result name="serviceList" type="redirect">
+				<param name="location">%{#application.CONTEXT_CENTRAL}/index.jsp</param>
+			</result>
+			<result name="casLogin" type="redirect">
+				<param name="location">%{#application.CONTEXT_CAS}/logout</param>
+			</result>
+			<result name="monitor" type="redirect">
+				<param name="location">%{#application.CONTEXT_OWNER}/messageboard.jsp</param>
+			</result>
+		</global-results>
+	</package>
+</struts>

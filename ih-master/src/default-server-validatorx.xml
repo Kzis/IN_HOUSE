@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<validatorConfig>
+    <validator>
+        <actionMethod>addValidate</actionMethod>
+        <className>com.cct.inhouse.bkonline.web.component.action.ValidateAction</className>
+        <!-- String -->
+        <validatorWhat>
+        	<inputName>requireInput</inputName>
+            <condition>
+            	<validateType>requireInput</validateType>
+            	<message>You must enter a value for requireInput</message>
+            </condition>
+        </validatorWhat>
+        <validatorWhat>
+        	<inputName>intValue</inputName>
+            <condition>
+                <validateType>intValue</validateType>
+                <message>intValue is not Integer</message>
+            </condition>
+        </validatorWhat>
+        <validatorWhat>
+        	<inputName>longValue</inputName>
+            <condition>
+                <validateType>longValue</validateType>
+                <message>longValue is not Long</message>
+            </condition>
+        </validatorWhat>
+        <validatorWhat>
+        	<inputName>dateValue</inputName>
+            <condition>
+                <validateType>dateValue</validateType>
+                <format>DD/MM/YYYY</format>
+                <userLocale>false</userLocale>
+                <message>dateValue is not Date</message>
+            </condition>
+        </validatorWhat>
+        <validatorWhat>
+        	<inputName>timeValue</inputName>
+            <condition>
+                <validateType>timeValue</validateType>
+                <format>HH:mm</format>
+                <userLocale>false</userLocale>
+                <message>timeValue is not Time</message>
+            </condition>
+        </validatorWhat>
+        <validatorWhat>
+        	<inputName>stringLength</inputName>
+            <condition>
+                <validateType>stringLength</validateType>
+                <minLength>5</minLength>
+                <maxLength>10</maxLength>
+            </condition>
+        </validatorWhat>
+        <validatorWhat>
+        	<inputName>startDate</inputName>
+            <condition>
+                <validateType>dayRangeLimit</validateType>
+                <endDate>endDate</endDate>
+                <rangeLimit>1</rangeLimit>
+                <format>DD/MM/YYYY</format>
+                <message>#bk.startDate</message>
+                <userLocale>false</userLocale>
+            </condition>
+        </validatorWhat>
+        <validatorWhat>
+        	<inputName>endDate</inputName>
+            <condition>
+                <validateType>dayRangeLimit</validateType>
+                <startDate>startDate</startDate>
+                <rangeLimit>1</rangeLimit>
+                <format>DD/MM/YYYY</format>
+                <message>#bk.endDate</message>
+                <userLocale>false</userLocale>
+            </condition>
+        </validatorWhat>
+        <validatorWhat>
+        	<inputName>emailValue</inputName>
+            <condition>
+            	<validateType>emailValue</validateType>
+            	<message>emailValue is not Time</message>
+            </condition>
+        </validatorWhat>
+        <validatorWhat>
+        	<inputName>dateBeforeLimit</inputName>
+            <condition>
+                <validateType>dateBeforeLimit</validateType>
+                <validateTypeCondition>M</validateTypeCondition>
+                <dbLookup>mysql_inhouse</dbLookup>
+                <dbFormat>%d/%m/%Y</dbFormat>
+                <rangeLimit>1</rangeLimit>
+                <format>DD/MM/YYYY</format>
+                <message>dateBeforeLimit is over limit</message>
+                <userLocale>false</userLocale>
+            </condition>
+        </validatorWhat>
+    </validator>
+</validatorConfig>

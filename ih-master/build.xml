@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="ih-master">
+    <property environment="env"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+	<property name="tomcat.path" value="${env.PATH_TOMCAT8_5}"/>
+	
+	<echo message="${tomcat.path}"/>
+	
+    <path id="lib.classpath">
+    	<fileset dir="lib">
+    		<include name="*.jar"/>
+	    </fileset>        
+    </path>
+	
+    <path id="Apache Tomcat.libraryclasspath">
+    	<fileset dir="${tomcat.path}/lib">
+    		<include name="*.jar"/>
+    	</fileset>
+    </path>
+	
+    <path id="ih-master.classpath">
+        <pathelement location="bin"/>
+    	<path refid="lib.classpath"/>
+        <path refid="Apache Tomcat.libraryclasspath"/>
+    </path>
+	
+	<target name="init">
+		<mkdir dir="build/classes"/>
+		<copy includeemptydirs="false" todir="build/classes">
+			<fileset dir="src">
+		    	<exclude name="**/*.java"/>
+				<not>
+					<filename name="default-server-validatorx-string-list-map.xml"/>
+				</not>
+				<not>
+					<filename name="default-server-validatorx.xml"/>
+				</not>
+		    </fileset>
+		</copy>
+		<copy includeemptydirs="false" todir="build/classes/META-INF/resources">
+			<fileset dir="META-INF/resources"> 
+			</fileset>
+		</copy>
+	</target>
+	
+	<target name="clean">
+		<delete dir="build/classes"/>
+	</target>
+	
+	<target name="clean-test-classes">
+		<delete dir="build/classes/test"/>
+	</target>
+	
+	<target depends="clean, init" name="build-project">
+		<echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="build/classes" includeantruntime="false" source="${source}" target="${target}" encoding="UTF-8">
+            <src path="src"/>
+            <classpath refid="ih-master.classpath"/>
+        </javac>
+    </target>
+
+    <target name="build" depends="build-project, clean-test-classes">
+        <jar destfile="ih-master-${env.SIT_VERSION}.jar" basedir="build/classes">
+    	</jar>
+    </target>
+</project>
