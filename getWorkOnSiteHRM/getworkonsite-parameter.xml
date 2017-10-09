@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<parameter>
+    <application>
+        <databaseConfigPath>D:\Work\TO_TIMEOFFSET\getWorkOnSiteHRM\dbconfig.xml</databaseConfigPath>
+        <applicationLocaleString>en</applicationLocaleString>
+    </application>
+    
+    <dateFormat>
+        <!-- รูปแบบวันที่ ที่ได้จากการ select จากฐานข้อมูล  โดยกำหนดตามมาตรฐาน SD -->
+        <forDatabaseSelectHHMMSS>yyyyMMddHHmmss</forDatabaseSelectHHMMSS>
+        
+        <!-- รูปแบบวันที่ ที่นำไปแสดงบนหน้าจอ  -->
+        <forDisplayHHMMSS>yyyy-MM-dd HH:mm:ss</forDisplayHHMMSS>
+    </dateFormat>
+    
+    <bgConfig>
+        <userProcess>-1</userProcess>
+        <urlWebService>http://127.0.0.1:8080/hrm_webservice/GetTimeOffsetWebService</urlWebService>
+    </bgConfig>
+</parameter>

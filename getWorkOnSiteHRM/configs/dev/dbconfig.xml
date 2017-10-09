@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<databaseParameter>
+    <database>
+        <index>0</index>
+        <databaseType>mysql</databaseType>
+        <driver>com.mysql.jdbc.Driver</driver>
+        <jndi>false</jndi>
+        <schemas>[SCHEMAS]:inhouse_project</schemas>
+        <url>jdbc:mysql://10.100.70.68:3306/inhouse_project?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull</url>
+        <user>appdev2</user>
+        <password>AppDev2017</password>
+        <maxActive>1</maxActive>
+		<maxIdle>1</maxIdle>
+		<maxWait>-1</maxWait>
+    </database>
+</databaseParameter>
