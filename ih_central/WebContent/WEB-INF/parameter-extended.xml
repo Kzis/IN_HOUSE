@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<parameterExtended>
+	<registers>
+		<registKey>CN_RMI</registKey>
+		<registName>RMI Central</registName>
+		<registUrl>http://127.0.0.1:8080/ih_central/CentralRMIServlet</registUrl>
+		<registStatus>N</registStatus>
+		<active>Y</active>
+	</registers>
+	<registers>
+		<registKey>BK_RMI</registKey>
+		<registName>RMI BKOnline</registName>
+		<registUrl>http://127.0.0.1:8080/bkonline/BKOnlineRMIServlet</registUrl>
+		<registStatus>N</registStatus>
+		<active>Y</active>
+	</registers>
+</parameterExtended>

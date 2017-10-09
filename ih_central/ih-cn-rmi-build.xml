@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="ih-cn-rmi">
+    <property environment="env"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+	<property name="webcontent.path" value="WebContent"/>
+	<property name="tomcat.path" value="${env.PATH_TOMCAT8_5}"/>
+	
+	<property name="rmi.path" value="com/cct/inhouse/central/rmi"/>
+	<property name="rmi.classes.path" value="rmi/classes"/>
+	<property name="rmi.domain.path" value="${rmi.classes.path}/${rmi.path}/domain"/>
+	<property name="rmi.interface.path" value="${rmi.classes.path}/${rmi.path}/interfaces"/>
+	<property name="rmi.service.path" value="${rmi.classes.path}/${rmi.path}/service"/>
+	
+	<property name="rmi.src.path" value="src/${rmi.path}"/>
+	<property name="rmi.src.domain.path" value="${rmi.src.path}/domain"/>
+	<property name="rmi.src.interface.path" value="${rmi.src.path}/interfaces"/>
+	<property name="rmi.src.service.path" value="${rmi.src.path}/service"/>
+	
+	
+	<echo message="${webcontent.path}"/>
+	<echo message="${tomcat.path}"/>
+	
+	<path id="Web App Libraries.libraryclasspath">
+		<fileset dir="${webcontent.path}/WEB-INF/lib">
+			<include name="*.jar"/>
+			<exclude name="tomcat-dbcp.jar"/>
+		</fileset>
+	</path>
+	
+    <path id="Apache Tomcat.libraryclasspath">
+    	<fileset dir="${tomcat.path}/lib">
+    		<include name="*.jar"/>
+    	</fileset>
+    </path>
+	
+    <path id="IH Central.classpath">
+        <pathelement location="bin"/>
+    	<path refid="Web App Libraries.libraryclasspath"/>
+        <path refid="Apache Tomcat.libraryclasspath"/>
+    </path>
+	
+	<target name="init">
+		<mkdir dir="${rmi.domain.path}"/>
+		<copy includeemptydirs="false" todir="${rmi.domain.path}">
+			<fileset dir="${rmi.src.domain.path}">
+				<exclude name="**/*.java"/>
+			</fileset>
+		</copy>
+		
+		<mkdir dir="${rmi.interface.path}"/>
+		<copy includeemptydirs="false" todir="${rmi.interface.path}">
+			<fileset dir="${rmi.src.interface.path}">
+				<exclude name="**/*.java"/>
+			</fileset>
+		</copy>
+		
+		<mkdir dir="${rmi.service.path}"/>
+		<copy includeemptydirs="false" todir="${rmi.service.path}">
+			<fileset dir="${rmi.src.service.path}">
+				<exclude name="**/*.java"/>
+			</fileset>
+		</copy>
+	</target>
+	
+	<target name="clean">
+		<delete dir="rmi/classes"/>
+	</target>
+	
+	<target name="clean-test-classes">
+		
+	</target>
+	
+    <target depends="clean, init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+    	<javac debug="true" debuglevel="${debuglevel}" destdir="${rmi.classes.path}" includeantruntime="false" source="${source}" target="${target}" encoding="UTF-8">
+            <src path="${rmi.src.domain.path}"/>
+            <classpath refid="IH Central.classpath"/>
+        </javac>
+    	
+    	<javac debug="true" debuglevel="${debuglevel}" destdir="${rmi.classes.path}" includeantruntime="false" source="${source}" target="${target}" encoding="UTF-8">
+    		<src path="${rmi.src.interface.path}"/>
+    	  	<classpath refid="IH Central.classpath"/>
+    	</javac>
+    		
+    	<javac debug="true" debuglevel="${debuglevel}" destdir="${rmi.classes.path}" includeantruntime="false" source="${source}" target="${target}" encoding="UTF-8">
+    		<src path="${rmi.src.service.path}"/>
+    		<not>
+    			<filename name="CentralRMIManager.java"/>
+    		</not>
+    	  	<classpath refid="IH Central.classpath"/>
+    	</javac>
+    </target>
+		
+	<target name="build" depends="build-project, clean-test-classes">
+		<jar destfile="ih-cn-rmi-${env.SIT_VERSION}.jar" basedir="${rmi.classes.path}">
+	    </jar>
+	</target>
+</project>

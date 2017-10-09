@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<parameter>
+    <application>
+        <theme>cupertino</theme> <!--  -->
+        <title>Inhouse central</title>
+        <systemCode>CENTRAL</systemCode>
+        <defaultSecUserIds>-1,-2</defaultSecUserIds>
+        <applicationLocaleString>en</applicationLocaleString>
+        <databaseLocaleString>en</databaseLocaleString>
+        <datetimeLocaleString>en</datetimeLocaleString>
+        <lppString>10,20,30,40,50,60,70,80,90,100</lppString>
+        <defaultLpp>100</defaultLpp>
+        <maxExceed>1000</maxExceed> <!-- 1000 -->
+        <maxExceedReport>1000</maxExceedReport>
+       	<supportLocaleString>th</supportLocaleString>
+        <fillAtLeast>3</fillAtLeast> <!-- กำหนดค่าการกรอกข้อมูลอย่างน้อย ก่อนค้นหาของ autocomplete -->
+        <mailConfigPath>D:\Workspace\Maldives-POC\ucp_cambodia\ucp\WEB-INF\</mailConfigPath>
+    </application>
+    <autocomplete>
+    	<fillAtLeast>3</fillAtLeast>
+    </autocomplete>
+
+    <attachFile>
+        <!-- ที่เก็บของ default image icon ของประเภทเอกสารของแต่ละประเภท -->
+        <imageDefaultPath>/opt/inhouse/web/image/</imageDefaultPath>
+		<!-- ที่เก็บไฟล์ที่ถูกบันทึกลงฐานข้อมูลแล้ว  -->
+        <defaultPath>/opt/inhouse/</defaultPath>
+		<!-- ที่เก็บไฟล์ที่ยังไม่ถูกบันทึกลงฐาน -->
+        <defaultTempPath>/opt/inhouse/temp/</defaultTempPath>
+        <systemPath>CENTRAL/</systemPath>
+    </attachFile>
+    
+    <database>
+        <key>mysql_inhouse</key>
+    	<databaseType>mysql</databaseType>
+        <jndi>true</jndi>
+        <lookup>jdbc/mysql_inhouse</lookup>
+        <schemas>[SCHEMAS]:inhouse_project</schemas>
+    </database>
+
+    <dateFormat>
+    	<!-- รูปแบบวันที่ ที่นำไป insert update ลงฐานข้อมูล  -->
+        <forDatabaseInsert>YYYY-MM-DD</forDatabaseInsert>
+        <forDatabaseInsertHHMM>YYYY-MM-DD HH:mm</forDatabaseInsertHHMM>
+        <forDatabaseInsertHHMMSS>YYYY-MM-DD HH:mm:ss</forDatabaseInsertHHMMSS>
+
+        <!-- รูปแบบวันที่ ที่ได้จากการ select จากฐานข้อมูล  โดยกำหนดตามมาตรฐาน SD -->
+        <forDatabaseSelect>DD/MM/YYYY</forDatabaseSelect>
+        <forDatabaseSelectHHMM>DD/MM/YYYY HH:mm</forDatabaseSelectHHMM>
+        <forDatabaseSelectHHMMSS>DD/MM/YYYY HH:mm:ss</forDatabaseSelectHHMMSS>
+
+        <!-- รูปแบบวันที่ ที่นำไปแสดงบนหน้าจอ  -->
+        <forDisplay>DD/MM/YYYY</forDisplay>
+        <forDisplayHHMM>DD/MM/YYYY HH:mm</forDisplayHHMM>
+        <forDisplayHHMMSS>DD/MM/YYYY HH:mm:ss</forDisplayHHMMSS>
+    </dateFormat>
+
+    <report>
+        <defaultFont>TH SarabunPSK</defaultFont>
+        <defaultPathfile>D:\Workspace\Maldives-POC\ucp_cambodia\ucp\report\</defaultPathfile>
+        <defaultPasswordReport>1234567890</defaultPasswordReport>
+    	<defaultPathLicense></defaultPathLicense>
+    	<systemPath>CENTRAL/</systemPath>
+    </report>
+    
+	<contextConfig>
+	    <url>http://10.100.70.68/</url><!-- สำหรับเรียกโหลด js และ css -->
+	    <servletUrl>http://10.100.70.68/</servletUrl><!-- สำหรับเรียก servlet ของ SelectItem, Dropdownlist และ  Autocomplete -->
+	    <contextCAS>cas_agent</contextCAS>
+	    <contextPortal>portal</contextPortal>
+	    <contextCentral>ih_central_dev</contextCentral>
+	    <contextQAQC>qaqc</contextQAQC>
+	    <contextRM>rm</contextRM>
+	    <contextTO>timeoffset</contextTO>
+	    <contextBK>bkonline_dev</contextBK>
+	    <contextTM>tm</contextTM>
+	    <contextML>ml</contextML>
+	    <contextPM>pm</contextPM>
+	    <contextRC>rc</contextRC> 	    
+	</contextConfig>
+	
+	<!-- port สำหรับ ใช้งาน RMI ต้องมีทุกเว็บ ใช้สำหรับโหลด Paramter, GlobalData และ SelectItem กลาง -->
+	<rmi>
+	    <port>5555</port>	 
+	</rmi>
+    
+</parameter>

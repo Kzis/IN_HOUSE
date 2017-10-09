@@ -1,0 +1,55 @@
+TABLE.body_main, .notify.notify-top-full {
+	width: 1225px;
+}
+
+TABLE.body_system {
+	width: 98%;
+}
+
+/**
+	กำหนดขนาดความกว้างของ message
+**/
+.notify.notify-top-full {
+   	margin-left: auto;
+   	margin-right: auto;
+}
+
+/*********************************************
+*** YULE
+**********************************************/
+DIV.RESULT_1280 {
+	width: 1206px;
+}
+
+DIV.RESULT_SYSTEM {
+	width: auto;
+	margin-top: 25px;
+}
+
+
+DIV.RESULT_1152 {
+	width: 1078px;
+}
+
+
+/*********************************************************************************
+*** SCREEN : 1600 >
+*********************************************************************************/
+
+@media screen and (min-width: 1600px){
+	TABLE.body_main, .notify.notify-top-full {
+		width: 1550px;
+	}
+	
+	DIV.RESULT_SYSTEM {
+		width: auto;
+	}
+	
+	/**
+		กำหนดขนาดความกว้างของ message
+	**/
+	.notify.notify-top-full {
+    	margin-left: auto;
+    	margin-right: auto;
+	}
+}
