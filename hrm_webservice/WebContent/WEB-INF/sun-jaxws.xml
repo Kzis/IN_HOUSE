@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime" version="2.0">
+
+    <endpoint
+        name="GetUserWebService"
+        implementation="com.cct.hrmdata.web.getdatauser.ws.GetUserWebService"
+        url-pattern="/GetUserWebService" />
+        
+    <endpoint
+        name="TimeMoneyWebService"
+        implementation="com.cct.hrmdata.web.timemoney.ws.TimeMoneyWebService"
+        url-pattern="/TimeMoneyWebService" />
+    
+    <endpoint
+        name="GetTimeOffsetAllWebService"
+        implementation="com.cct.hrmdata.web.gettimeoffset.ws.GetTimeOffsetWebService"
+        url-pattern="/GetTimeOffsetWebService" />
+    
+    <endpoint
+        name="CheckUserLoginWebService"
+        implementation="com.cct.hrmdata.web.checkuserlogin.ws.CheckUserLoginWebService"
+        url-pattern="/CheckUserLoginWebService" />
+        
+</endpoints>

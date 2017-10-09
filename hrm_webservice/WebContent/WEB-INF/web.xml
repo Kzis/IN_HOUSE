@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>ws_hrm</display-name>
+	
+	<listener>
+		<listener-class>com.sun.xml.ws.transport.http.servlet.WSServletContextListener</listener-class>
+	</listener>
+
+	<servlet>
+		<servlet-name>parameter</servlet-name>
+		<servlet-class>com.cct.hrmdata.web.config.parameter.servlet.ParameterServlet</servlet-class>
+		<init-param>
+			<param-name>parameterfile</param-name>
+			<param-value>/WEB-INF/parameter.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>log4j</param-name>
+			<param-value>/WEB-INF/classes/log4j.properties</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+     	<servlet-name>parameter</servlet-name>
+    	<url-pattern>/parameter</url-pattern>
+    </servlet-mapping>
+		
+	<servlet>
+		<servlet-name>GetDataUserWebService</servlet-name>
+		<servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>GetDataUserWebService</servlet-name>
+		<url-pattern>/GetUserWebService</url-pattern>
+	</servlet-mapping>
+	
+	<!-- TIME MONEY -->
+	<servlet>
+		<servlet-name>TimeMoneyWebService</servlet-name>
+		<servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+		<load-on-startup>3</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>TimeMoneyWebService</servlet-name>
+		<url-pattern>/TimeMoneyWebService</url-pattern>
+	</servlet-mapping>
+	
+	<!-- SOS -->
+	<servlet>
+		<servlet-name>CheckUserLoginWebService</servlet-name>
+		<servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+		<load-on-startup>4</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>CheckUserLoginWebService</servlet-name>
+		<url-pattern>/CheckUserLoginWebService</url-pattern>
+	</servlet-mapping>
+	
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+</web-app>

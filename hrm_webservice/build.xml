@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="hrm_webservice">
+    <property environment="env"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+	<property name="webcontent" value="WebContent"/>
+    <property name="tomcat.path" value="${env.PATH_TOMCAT8_5}"/>
+ 	
+ 	 <path id="Apache Tomcat v8.0 [Apache Tomcat v8.0].libraryclasspath">
+    	<fileset dir="${tomcat.path}/lib">
+    		<include name="*.jar"/>
+    	</fileset>
+    </path>
+ 	
+    <path id="Web App Libraries.libraryclasspath">
+        <fileset dir="${webcontent}/WEB-INF/lib">
+			<include name="*.jar"/>
+	    </fileset>
+    </path>
+    <path id="EAR Libraries.libraryclasspath"/>
+    
+    <path id="hrm.classpath">
+        <pathelement location="${webcontent}/WEB-INF/classes"/>
+         <path refid="Apache Tomcat v8.0 [Apache Tomcat v8.0].libraryclasspath"/>
+        <path refid="Web App Libraries.libraryclasspath"/>
+        <path refid="EAR Libraries.libraryclasspath"/>
+    </path>
+    
+    <target name="init">
+        <mkdir dir="${webcontent}/WEB-INF/classes"/>
+		<copy includeemptydirs="false" todir="${webcontent}/WEB-INF/classes">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="${webcontent}/WEB-INF/classes"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="${webcontent}/WEB-INF/classes" includeantruntime="false" source="${source}" target="${target}" encoding="UTF-8">
+            <src path="src"/>
+            <classpath refid="hrm.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    
+    <!-- DEV WAR -->
+    <target name="hrm_webservice_dev" description="Pack war to hr_webservice_dev" depends="clean, build">
+      <copy file="configs/dev/context.xml" todir="${webcontent}/META-INF" overwrite="true"/>
+        <copy file="configs/dev/log4j.properties" todir="${webcontent}/WEB-INF/classes" overwrite="true"/>
+        <copy file="configs/dev/parameter.xml" todir="${webcontent}/WEB-INF" overwrite="true"/>
+		
+        <war destfile="configs/dev/hrm_webservice_dev.war" basedir="${webcontent}" needxmlfile="false"></war>
+    </target>
+    
+    <!-- DEV WAR -->
+    <target name="hrm_webservice" description="Pack war to hr_webservice" depends="clean, build">
+       <copy file="configs/prod/context.xml" todir="${webcontent}/META-INF" overwrite="true"/>
+        <copy file="configs/prod/log4j.properties" todir="${webcontent}/WEB-INF/classes" overwrite="true"/>
+        <copy file="configs/prod/parameter.xml" todir="${webcontent}/WEB-INF" overwrite="true"/>
+		
+        <war destfile="configs/prod/hrm_webservice.war" basedir="${webcontent}" needxmlfile="false"></war>
+    </target>
+    
+    
+</project>

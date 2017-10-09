@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<parameter>
+    <application>
+       <applicationLocaleString>en</applicationLocaleString>
+        <databaseLocaleString>en</databaseLocaleString>
+        <datetimeLocaleString>en</datetimeLocaleString>
+    </application>
+    <database>
+    	<index>0</index>
+        <databaseType>oracle</databaseType>
+        <jndi>true</jndi>
+        <lookup>jdbc/oracle_hrm</lookup>
+        <schemas>[OC]:HRM</schemas>
+    </database>
+</parameter>
