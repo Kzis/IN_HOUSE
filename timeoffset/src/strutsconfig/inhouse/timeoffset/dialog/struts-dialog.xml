@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="dialog" namespace="/jsp/dialog" extends="common">
+		
+		<action name="*ApproveDialog" class="com.cct.inhouse.timeoffset.web.dialog.approve.action.ApproveDialogAction" method="{1}">
+			<result name="searchListById" type="json">
+			    <param name="root">model</param>
+			    <param name="ignoreHierarchy">false</param>
+			</result>
+			
+			<result name="searchDetail" type="json">
+			    <param name="root">model</param>
+			    <param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+	</package>
+</struts>

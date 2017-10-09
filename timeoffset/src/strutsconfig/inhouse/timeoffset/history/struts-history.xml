@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="historyManager" namespace="/jsp/history" extends="common">
+	    
+	    <action name="*TimeOffsetHistoryManager" class="com.cct.inhouse.timeoffset.web.history.action.TimeOffsetHistoryManagerAction" method="{1}">
+			<result name="init">/jsp/history/manager/historySearchManager.jsp</result>
+		</action>
+		
+	</package>
+</struts>

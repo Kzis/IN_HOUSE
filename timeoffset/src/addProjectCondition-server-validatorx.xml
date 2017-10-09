@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<validatorConfig>
+    <validator>
+        <actionMethod>addProjectCondition</actionMethod>
+        <className>com.cct.inhouse.timeoffset.web.condition.action.ProjectConditionAction</className>
+        
+        <!-- String -->
+        <validatorWhat>
+        	<inputName>projectCondition.projectId</inputName>
+            <condition>
+            	<validateType>requireInput</validateType>
+            	<message>You must enter a value for Project</message>
+            </condition>
+        </validatorWhat>
+        
+        <validatorWhat>
+        	<inputName>projectCondition.projConDetail</inputName>
+            <condition>
+            	<validateType>requireInput</validateType>
+            	<message>You must enter a value for Project Condition Detail</message>
+            </condition>
+        </validatorWhat>
+        
+        <validatorWhat>
+        	<inputName>projectCondition.hourTot</inputName>
+            <condition>
+            	<validateType>requireInput</validateType>
+            	<message>You must enter a value for Hour Total</message>
+            </condition>
+        </validatorWhat>
+ 
+    </validator>
+</validatorConfig>

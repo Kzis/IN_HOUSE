@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.action.extension" value="action" />
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.i18n.reload" value="false" />
+	<constant name="struts.configuration.xml.reload" value="false" />
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true" />
+	<constant name="struts.multipart.maxSize" value="100000000" />
+	<constant name="struts.multipart.saveDir" value="/tmp/" />
+	<constant name="struts.messages.error.file.too.large" value="File exceeded size limit"/>
+	<constant name="struts.messages.error.content.type.not.allowed" value="File does not match the expected content types specified"/>
+	<constant name="struts.messages.error.uploading" value="File could not be uploaded" />
+	<constant name="struts.action.excludePattern" value="/servlet/.*"/>
+
+	<constant name="struts.custom.i18n.resources" value="
+		  resources.bundle.inhouse.common.Message
+		, resources.bundle.inhouse.common.MessageAlert
+		, resources.bundle.master.security.MessageSecurity
+		, resources.bundle.timeoffset.MessageTimeOffset
+		, resources.bundle.inhouse.timeoffset.MessageTO
+	"/>
+	<!-- Resource bundle -->
+
+	<include file="strutsconfig/inhouse/common/struts-common.xml" />
+	
+	<include file="strutsconfig/inhouse/timeoffset/dialog/struts-dialog.xml" />
+	<include file="strutsconfig/inhouse/timeoffset/condition/struts-condition.xml" />
+	<include file="strutsconfig/inhouse/timeoffset/security/struts-security.xml" />
+	<include file="strutsconfig/inhouse/timeoffset/manage/struts-manage.xml" />
+	<include file="strutsconfig/inhouse/timeoffset/todo/struts-todo.xml" />
+	<include file="strutsconfig/inhouse/timeoffset/approve/struts-approve.xml" />
+	<include file="strutsconfig/inhouse/timeoffset/history/struts-history.xml" />
+	<include file="strutsconfig/inhouse/timeoffset/history/struts-history-general.xml" />
+	<include file="strutsconfig/inhouse/timeoffset/report/struts-report.xml" />
+</struts>

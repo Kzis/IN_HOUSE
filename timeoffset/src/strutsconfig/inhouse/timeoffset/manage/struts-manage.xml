@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="manage" namespace="/jsp/manage" extends="common">
+		
+	    <action name="*ManageTimeOffset" class="com.cct.inhouse.timeoffset.web.manage.action.ManageTimeOffsetAction" method="{1}">
+	        <result name="init">/jsp/manage/manageTimeOffsetSearch.jsp</result>
+	        <result name="search">/jsp/manage/manageTimeOffsetSearch.jsp</result>
+	        <result name="searchDo">/jsp/manage/manageTimeOffsetSearch.jsp</result>
+	        <result name="addEdit">/jsp/manage/manageTimeOffsetAddEditView.jsp</result>
+	        <result name="editView">/jsp/manage/manageTimeOffsetAddEditView.jsp</result>
+	    </action>
+	    
+	</package>
+</struts>

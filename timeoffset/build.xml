@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="war_dev" name="timeoffset">
+    <property environment="env"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+	<property name="source" value="1.8"/>
+	<property name="webcontent.path" value="WebContent"/>
+	<property name="tomcat.path" value="${env.PATH_TOMCAT8_5}"/>
+	
+	<echo message="${webcontent.path}"/>
+	<echo message="${tomcat.path}"/>
+	
+	<path id="Web App Libraries.libraryclasspath">
+		<fileset dir="${webcontent.path}/WEB-INF/lib">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+    <path id="Apache Tomcat.libraryclasspath">
+    	<fileset dir="${tomcat.path}/lib">
+    		<include name="*.jar"/>
+    	</fileset>
+    </path>
+	<path id="timeoffset.classpath">
+		<pathelement location="bin"/>
+		<path refid="Web App Libraries.libraryclasspath"/>
+		<path refid="Apache Tomcat.libraryclasspath"/>
+	</path>
+    <target name="init">
+		<mkdir dir="${webcontent.path}/WEB-INF/classes"/>
+		<copy includeemptydirs="false" todir="${webcontent.path}/WEB-INF/classes">
+			<fileset dir="src">
+				<exclude name="**/*.java"/>
+			</fileset>
+		</copy>
+	</target>
+	
+	<target name="clean">
+		<delete dir="${webcontent.path}/WEB-INF/classes"/>
+	</target>
+	
+	<target depends="clean, init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+    	<javac debug="true" debuglevel="${debuglevel}" destdir="${webcontent.path}/WEB-INF/classes" includeantruntime="false" source="${source}" target="${target}" encoding="UTF-8">
+            <src path="src"/>
+			<classpath refid="timeoffset.classpath"/>
+		</javac>
+	</target>
+	
+	<target name="clean-test-classes">
+		<delete dir="${webcontent.path}/WEB-INF/classes/test"/>
+	</target>
+    
+    <!-- DEV WAR -->
+	<target name="war_dev" description="Pack war to  for dev" depends="build-project, clean-test-classes">
+	    	<copy file="configs/dev/log4j.properties" todir="${webcontent.path}/WEB-INF/classes" overwrite="true"/>
+	    	<copy file="configs/dev/parameter.xml" todir="${webcontent.path}/WEB-INF" overwrite="true"/>
+	    	<copy file="configs/dev/parameter-extended.xml" todir="${webcontent.path}/WEB-INF" overwrite="true"/>
+	    	<delete file="${webcontent.path}/META-INF/context.xml"/>
+	    	
+	        <war destfile="configs/dev/timeoffset_dev.war" basedir="${webcontent.path}" needxmlfile="false"></war>
+	    </target>
+    
+    <!-- PROD WAR -->
+    <target name="war_prod" description="Pack war to  for prod" depends="build-project, clean-test-classes">
+		<copy file="configs/prod/log4j.properties" todir="${webcontent.path}/WEB-INF/classes" overwrite="true"/>
+		<copy file="configs/prod/parameter.xml" todir="${webcontent.path}/WEB-INF" overwrite="true"/>
+		<copy file="configs/prod/parameter-extended.xml" todir="${webcontent.path}/WEB-INF" overwrite="true"/>
+		<delete file="${webcontent.path}/META-INF/context.xml"/>
+    	
+        <war destfile="configs/prod/timeoffset.war" basedir="${webcontent.path}" needxmlfile="false"></war>
+    </target>
+</project>

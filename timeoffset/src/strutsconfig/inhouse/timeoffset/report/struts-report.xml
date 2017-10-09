@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="report" namespace="/jsp/report" extends="common">
+	    <action name="*TOReport" class="com.cct.inhouse.timeoffset.web.report.action.toreport.TOReportAction" method="{1}">
+			<result name="init">/jsp/report/TimeOffsetInUseReport.jsp</result>
+		</action>
+		
+	    <action name="*InuseReport" class="com.cct.inhouse.timeoffset.web.report.action.inuse.InuseReportAction" method="{1}">
+			<result name="init">/jsp/report/reportForGeneralSearch.jsp</result>
+		</action>
+		
+	    <action name="*InuseManagerReport" class="com.cct.inhouse.timeoffset.web.report.action.inuse.InuseManagerReportAction" method="{1}">
+			<result name="init">/jsp/report/reportForManagerSearch.jsp</result>
+		</action>
+	    
+	</package>
+</struts>

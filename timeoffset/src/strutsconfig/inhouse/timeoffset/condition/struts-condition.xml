@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="condition" namespace="/jsp/condition" extends="common">
+		
+	    <action name="*ProjectCondition" class="com.cct.inhouse.timeoffset.web.condition.action.ProjectConditionAction" method="{1}">
+	        <result name="init">/jsp/condition/conditionSearch.jsp</result>
+	    	<result name="search">/jsp/condition/conditionSearch.jsp</result>
+	    	<result name="searchDo">/jsp/condition/conditionSearch.jsp</result>
+	    	<result name="addEdit">/jsp/condition/conditionAddEdit.jsp</result>
+	    </action>
+	    
+	</package>
+</struts>

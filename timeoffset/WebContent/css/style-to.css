@@ -1,0 +1,152 @@
+.highlight-red-style {
+    background-color: rgba(251, 6, 6, 0.62) !important;
+    background: rgba(251, 6, 6, 0.62) !important;
+}
+
+.highlight-yellow-style {
+    background-color: rgb(255, 255, 102) !important;
+    background: rgb(255, 255, 102) !important;
+}
+
+TABLE.BUTTON TD.RIGHT_65 {
+	width: 65%;
+	text-align: right;
+}
+
+TABLE.BUTTON TD.RIGHT_60 {
+	width: 60%;
+	text-align: right;
+}
+
+TABLE.BUTTON TD.LEFT_40 {
+	width: 40%;
+}
+
+TABLE.BUTTON TD.LEFT_35 {
+	width: 35%;
+}
+
+TABLE.FORM .txt79 {
+    width: 79%;
+}
+
+TABLE.FORM .combox250 {
+     width: 250%;
+}
+
+TABLE.FORM .combox245 {
+     width: 245%;
+}
+
+TABLE.FORM .combox40 {
+     width: 40%;
+}
+
+TABLE.FORM .combox37 {
+     width: 37%;
+}
+
+TABLE.FORM .combox35 {
+     width: 35%;
+}
+
+TABLE.FORM .combox30 {
+     width: 30%;
+}
+
+TABLE.FORM .combox28 {
+     width: 28%;
+}
+
+TABLE.FORM .combox25 {
+     width: 25%;
+}
+
+TABLE.FORM .combox20 {
+     width: 20%;
+}
+
+TABLE.FORM .combox500px {
+    width: 500px;
+}
+
+.combox-to {
+    width: 500px;
+}
+
+.autocomplete-to {
+    width: 490px;
+}
+
+.combox265 {
+     width: 265%;
+}
+
+.combox245 {
+     width: 245%;
+}
+
+.combox91 {
+     width: 91%;
+}
+
+.combox90 {
+     width: 90%;
+}
+
+.combox38 {
+     width: 38%;
+}
+
+.combox37 {
+     width: 37%;
+}
+
+.col-width-500px {
+	width: 500px;
+}
+
+.col-width-250px {
+	width: 250px;
+}
+
+.col-width-160px {
+	width: 160px;
+}
+
+.col-width-155px {
+	width: 155px;
+}
+
+
+.col-width-145px {
+	width: 145px;
+}
+
+.col-width-140px {
+	width: 140px;
+}
+
+.col-width-135px {
+	width: 135px;
+}
+
+.col-width-130px {
+	width: 130px;
+}
+
+.col-width-120px {
+	width: 120px;
+}
+
+.col-width-110px {
+	width: 110px;
+}
+
+.col-width-105px {
+	width: 105px;
+}
+
+.col-width-90px {
+	width: 90px;
+}

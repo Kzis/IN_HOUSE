@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<parameter>
+    <application>
+        <title>Time Offset Management System</title>
+        <systemCode>TO</systemCode>
+        <defaultSecUserIds>218</defaultSecUserIds>
+        <datetimeLocaleString>th</datetimeLocaleString>
+        <applicationLocaleString>th</applicationLocaleString>
+    </application>
+
+     <attachFile>
+        <systemPath>TO/</systemPath>
+    </attachFile>
+    <report>
+        <systemPath>TO/</systemPath>
+    </report>
+    
+    <contextConfig>
+<!-- 	    <url>http://10.100.70.68/</url> สำหรับเรียกโหลด js และ css -->
+	    <url>http://127.0.0.1:8080/</url>
+	    <servletUrl>http://127.0.0.1/</servletUrl><!-- สำหรับเรียก servlet ของ SelectItem, Dropdownlist และ  Autocomplete -->
+<!-- 	    <contextCentral>ih_central_dev</contextCentral> -->
+	    <contextCentral>ih_central</contextCentral>
+	</contextConfig>
+	
+	<!-- port สำหรับ ใช้งาน RMI ต้องมีทุกเว็บ ใช้สำหรับโหลด Paramter, GlobalData และ SelectItem กลาง -->
+	<rmi>
+	    <port>5555</port>	 
+	</rmi>
+</parameter>

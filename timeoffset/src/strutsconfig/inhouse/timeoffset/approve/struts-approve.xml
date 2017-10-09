@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="approve" namespace="/jsp/approve" extends="common">
+		
+	    <action name="*TimeOffsetApprove" class="com.cct.inhouse.timeoffset.web.approve.action.TimeOffsetApproveAction" method="{1}">
+			<result name="init">/jsp/approve/approveSearch.jsp</result>
+			<result name="approve">/jsp/approve/approveSearch.jsp</result>
+			<result name="addEdit">/jsp/approve/approveEditView.jsp</result>
+			<result name="searchDo">/jsp/approve/approveSearch.jsp</result>
+			<result name="view">/jsp/approve/approveEditView.jsp</result>
+			<result name="search">/jsp/approve/approveSearch.jsp</result>
+			
+			<result name="todoApprove" type="redirectAction">
+	    	    <param name="actionName">initTimeOffsetTodo?criteria.criteriaKey=${criteria.criteriaKey}</param>
+            	<param name="namespace">/jsp/todo</param>
+	    	</result>
+	    	
+		</action>
+	    
+	</package>
+</struts>

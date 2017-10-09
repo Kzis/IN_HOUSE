@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<parameterExtended>
+    <timeOffsetConf>
+        <systemCode>TO</systemCode>
+        <systemNameTh>ระบบจัดการเวลาชดเชย</systemNameTh>
+        <systemNameEn>Time Offset Management System</systemNameEn>    
+        
+        <webServiceConf>
+            <url>http://10.100.70.68/hrm_webservice_dev/GetTimeOffsetWebService</url>
+        </webServiceConf>
+    </timeOffsetConf>
+</parameterExtended>
