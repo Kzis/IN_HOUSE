@@ -1,0 +1,70 @@
+TABLE TD {
+	font-size: 14px;
+	vertical-align: middle !important;
+}
+
+TABLE TH.order, TABLE TD.order {
+	width: 75px;
+	text-align: center;
+}
+
+TABLE TH.GlobalType, TABLE TD.GlobalType {
+	width: 175px;
+}
+
+TABLE TD.GlobalType {
+	color: #088A08;
+	text-align: right;
+}
+
+TABLE TH.GlobalData, TABLE TD.GlobalData {
+	width: 275px;
+}
+
+TABLE TD.GlobalData {
+	text-align: center;
+}
+
+TABLE TH.ActionClass, TABLE TD.ActionClass {
+	
+}
+
+TABLE TH.Remark, TABLE TD.Remark {
+	width: 700px;
+}
+
+TABLE TD.ActionClass, FONT.ActionClass {
+	color: #000080;
+}
+
+SELECT.GlobalData {
+	width: 100%;
+}
+
+SELECT.DropdownList {
+	width: 250px;
+}
+
+/**
+#tableSelectItem_divDetailCustom TD {
+	vertical-align: top !important;
+}
+**/
+
+DIV.SPACE_BLOCK {
+	width: 25px;
+	float: left;
+}
+
+P.COMMENT_BLOCK {
+	width: 100%;
+	color: black;
+}
+
+FONT.COMMENT_BLOCK, H4.COMMENT_BLOCK, OL.COMMENT_BLOCK { 
+	color: black;
+}
+
+.combox {
+	width: 150px;
+}

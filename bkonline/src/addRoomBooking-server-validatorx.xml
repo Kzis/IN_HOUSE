@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<validatorConfig>
+    <validator>
+        <actionMethod>addRoomBooking</actionMethod>
+        <className>com.cct.inhouse.bkonline.web.booking.roombooking.action.RoomBookingAction</className>
+        <!-- String -->
+        <validatorWhat>
+        	<inputName>roomBooking.subject</inputName>
+            <condition>
+            	<validateType>requireInput</validateType>
+            	<message>You must enter a value for Subjuct</message>
+            </condition>
+        </validatorWhat>
+        <validatorWhat>
+        	<inputName>roomBooking.userBookName</inputName>
+            <condition>
+            	<validateType>requireInput</validateType>
+            	<message>You must enter a value for Booking Name</message>
+            </condition>
+        </validatorWhat>
+        <validatorWhat>
+        	<inputName>roomBooking.roomId</inputName>
+            <condition>
+            	<validateType>requireInput</validateType>
+            	<message>You must Choose a Meeting Room</message>
+            </condition>
+        </validatorWhat>
+        <validatorWhat>
+        	<inputName>roomBooking.startDate</inputName>
+            <condition>
+            	<validateType>requireInput</validateType>
+            	<message>You must enter a value for Start Date</message>
+            </condition>
+            <condition>
+            	<validateType>dateValue</validateType>
+            	<format>DD/MM/YYYY</format> 
+            	<message>Start Date Wrong Format,Example Format "21/12/2017"</message>
+            </condition>
+        </validatorWhat>
+        <validatorWhat>
+        	<inputName>roomBooking.endDate</inputName>
+            <condition>
+            	<validateType>requireInput</validateType>
+            	<message>You must enter a value for End Date</message>
+            </condition>
+            <condition>
+            	<validateType>dateValue</validateType>
+            	<format>DD/MM/YYYY</format> 
+            	<message>End Date Wrong Format,Example Format "21/12/2017"</message>
+            </condition>
+        </validatorWhat>
+        <validatorWhat>
+        	<inputName>roomBooking.startTime</inputName>
+            <condition>
+            	<validateType>requireInput</validateType>
+            	<message>You must enter a value for Start Time</message>
+            </condition>
+            <condition>
+            	<validateType>timeValue</validateType>
+            	<format>HH:mm</format> 
+            	<message>Start Time Wrong Format,Example Format "18:00"</message>
+            </condition>
+        </validatorWhat>
+        <validatorWhat>
+        	<inputName>roomBooking.endTime</inputName>
+            <condition>
+            	<validateType>requireInput</validateType>
+            	<message>You must enter a value for End Time</message>
+            </condition>
+            <condition>
+            	<validateType>timeValue</validateType>
+            	<format>HH:mm</format> 
+            	<message>End Time Wrong Format,Example Format "18:00"</message>
+            </condition>
+        </validatorWhat>
+    </validator>
+</validatorConfig>

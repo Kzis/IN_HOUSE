@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.action.extension" value="action" />
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.i18n.reload" value="false" />
+	<constant name="struts.configuration.xml.reload" value="false" />
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true" />
+
+	<constant name="struts.custom.i18n.resources" value="
+		, resources.bundle.inhouse.common.MessageAlert
+		, resources.bundle.inhouse.common.Message
+		, resources.bundle.inhouse.bkonline.MessageBK
+	"/>
+
+	<include file="strutsconfig/inhouse/common/struts-common.xml" />
+	<include file="strutsconfig/inhouse/bkonline/security/struts-security.xml" />
+	<include file="strutsconfig/inhouse/bkonline/calendar/struts-calendar.xml" />
+	<include file="strutsconfig/inhouse/bkonline/booking/struts-booking.xml" />
+	<include file="strutsconfig/inhouse/bkonline/setting/struts-setting.xml" />
+	<include file="strutsconfig/inhouse/bkonline/notification/struts-notification.xml" />
+	<include file="strutsconfig/inhouse/component/struts-component.xml" />
+</struts>

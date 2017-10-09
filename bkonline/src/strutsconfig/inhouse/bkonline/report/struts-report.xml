@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="security" namespace="/" extends="common">
+		<action name="*Mainpage" class="com.cct.inhouse.bkonline.web.security.mainpage.action.MainpageAction" method="{1}">
+            <result name="initScheduler" type="redirect">
+				<param name="location">${contextConfig.getURLContextBK()}/jsp/scheduler/initScheduler.action</param>
+			</result>
+            <result name="serviceList" type="redirect">
+				<param name="location">/initMainpage.action</param>
+			</result>
+			<result name="casLogin" type="redirect">
+				<param name="location">${contextConfig.getURLContextCAS()}/logout</param>
+			</result>
+        </action>
+	</package>
+</struts>

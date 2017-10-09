@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<validatorConfig>
+    <validator>
+        <actionMethod>addValidate</actionMethod>
+        <className>com.cct.inhouse.bkonline.web.component.action.ValidateAction</className>
+        <!-- String -->
+        <validatorWhat>
+        	<inputName>requireInput</inputName>
+            <condition>
+            	<validateType>requireInput</validateType>
+            	<message>You must enter a value for requireInput</message>
+            </condition>
+        </validatorWhat>
+        <validatorWhat>
+        	<inputName>intValue</inputName>
+            <condition>
+                <validateType>intValue</validateType>
+            </condition>
+        </validatorWhat>
+        <validatorWhat>
+        	<inputName>longValue</inputName>
+            <condition>
+                <validateType>longValue</validateType>
+            </condition>
+        </validatorWhat>
+        <validatorWhat>
+        	<inputName>dateValue</inputName>
+            <condition>
+                <validateType>dateValue</validateType>
+                <message>You must enter a value for dateValue</message>
+            </condition>
+        </validatorWhat>
+        <validatorWhat>
+        	<inputName>timeValue</inputName>
+            <condition>
+                <validateType>timeValue</validateType>
+            </condition>
+        </validatorWhat>
+        <validatorWhat>
+        	<inputName>stringLength</inputName>
+            <condition>
+                <validateType>stringLength</validateType>
+                <minLength>5</minLength>
+                <maxLength>10</maxLength>
+            </condition>
+        </validatorWhat>
+        <validatorWhat>
+        	<inputName>startDate</inputName>
+            <condition>
+                <validateType>dayRangeLimit</validateType>
+                <endDate>endDate</endDate>
+                <rangeLimit>2</rangeLimit>
+                <message>#bk.startDate</message>
+            </condition>
+        </validatorWhat>
+        <validatorWhat>
+        	<inputName>endDate</inputName>
+            <condition>
+                <validateType>dayRangeLimit</validateType>
+                <startDate>startDate</startDate>
+                <rangeLimit>2</rangeLimit>
+                <message>#bk.endDate</message>
+            </condition>
+        </validatorWhat>
+        <validatorWhat>
+        	<inputName>emailValue</inputName>
+            <condition>
+            	<validateType>emailValue</validateType>
+            	<message>You must enter a value for emailValue</message>
+            </condition>
+        </validatorWhat>
+        <validatorWhat>
+        	<inputName>dateBeforeLimitD</inputName>
+            <condition>
+                <validateType>dateBeforeLimit</validateType>
+                <validateTypeCondition>D</validateTypeCondition>
+                <dbLookup>mysql_inhouse</dbLookup>
+                <dbFormat>%d/%m/%Y</dbFormat>
+                <rangeLimit>1</rangeLimit>
+                <message>dateBeforeLimit is over limit 1 Day</message>
+            </condition>
+        </validatorWhat>
+        <validatorWhat>
+        	<inputName>dateBeforeLimitM</inputName>
+            <condition>
+                <validateType>dateBeforeLimit</validateType>
+                <validateTypeCondition>M</validateTypeCondition>
+                <dbLookup>mysql_inhouse</dbLookup>
+                <dbFormat>%d/%m/%Y</dbFormat>
+                <rangeLimit>1</rangeLimit>
+                <message>dateBeforeLimit is over limit 1 Month</message>
+            </condition>
+        </validatorWhat>
+        <validatorWhat>
+        	<inputName>dateBeforeLimitY</inputName>
+            <condition>
+                <validateType>dateBeforeLimit</validateType>
+                <validateTypeCondition>Y</validateTypeCondition>
+                <dbLookup>mysql_inhouse</dbLookup>
+                <dbFormat>%d/%m/%Y</dbFormat>
+                <rangeLimit>1</rangeLimit>
+                <message>dateBeforeLimit is over limit 1 Year</message>
+            </condition>
+        </validatorWhat>
+    </validator>
+</validatorConfig>

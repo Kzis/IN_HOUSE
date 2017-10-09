@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<parameterExtended>
+	<bookingRoomBeforeMinutes>15</bookingRoomBeforeMinutes> <!-- ต้องก่อน 15 นาที ถึงใช้งานได้-->
+	<bookingRoomReserveDays>90</bookingRoomReserveDays> <!-- จองล่วงหน้าได้ 3 เดือน -->
+    <lineBotWebServiceProxy>http://10.100.70.68/linebot_webservice_dev/LineBotWebService?wsdl</lineBotWebServiceProxy>
+	<lineBotChannelAccessToken>4AM1WIXqedw6z6o+9Fp+QyInonEWsUnYaevy6oTV7XtzKnSMec8cwkp4bSWpTBg9lBpwYgewwJlGA9OaT4TSz9nmc6CmSeBP5yXMl+GAqq3QJim8zR5bOWNWP9sFLwKDohbjNWnGGkytHbrSlktG8gdB04t89/1O/w1cDnyilFU=</lineBotChannelAccessToken>
+
+	<dataOverLimitCheckOutMinutes>15</dataOverLimitCheckOutMinutes> <!-- CheckOut เกินกำหนดเวลา กำหนดให้เวลา CheckOut -->
+
+	<dataBeforeCheckInMinutes>15</dataBeforeCheckInMinutes> <!-- CheckIn ก่อนได้กี่นาที -->
+	<dataAfterCheckInMinutes>30</dataAfterCheckInMinutes> <!-- CheckIn ห้ามเกินเวลาเริ่มประชุมได้กี่นาที-->
+	
+	<timeCheckedCheckIn>10</timeCheckedCheckIn> <!-- เวลาตรวจสอบการ CheckIn -->
+	<timeCheckedCheckOut>10</timeCheckedCheckOut> <!-- เวลาตรวจสอบการ CheckOut -->
+</parameterExtended>

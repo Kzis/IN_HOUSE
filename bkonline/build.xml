@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="war_bkonline_dev_build" name="bkonline">
+    <property environment="env"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+	<property name="webcontent.path" value="WebContent"/>
+	<property name="tomcat.path" value="${env.PATH_TOMCAT8_5}"/>
+	
+	<echo message="${webcontent.path}"/>
+	<echo message="${tomcat.path}"/>
+	
+	<path id="Web App Libraries.libraryclasspath">
+		<fileset dir="${webcontent.path}/WEB-INF/lib">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+    <path id="Apache Tomcat.libraryclasspath">
+    	<fileset dir="${tomcat.path}/lib">
+    		<include name="*.jar"/>
+    	</fileset>
+    </path>
+    <path id="BK Online.classpath">
+        <pathelement location="bin"/>
+    	<path refid="Web App Libraries.libraryclasspath"/>
+        <path refid="Apache Tomcat.libraryclasspath"/>
+    </path>
+	<target name="init">
+		<mkdir dir="${webcontent.path}/WEB-INF/classes"/>
+	    <copy includeemptydirs="false" todir="${webcontent.path}/WEB-INF/classes">
+	    	<fileset dir="src">
+	        	<exclude name="**/*.uad"/>
+	            <exclude name="**/*.ucd"/>
+	            <exclude name="**/*.uld"/>
+	            <exclude name="**/*.upd"/>
+	            <exclude name="**/*.udd"/>
+	            <exclude name="**/*.uod"/>
+	            <exclude name="**/*.usd"/>
+	            <exclude name="**/*.utd"/>
+	            <exclude name="**/*.uud"/>
+	            <exclude name="**/*.odd"/>
+	            <exclude name="**/*.ead"/>
+	            <exclude name="**/*.ecd"/>
+	            <exclude name="**/*.eld"/>
+	            <exclude name="**/*.epd"/>
+	            <exclude name="**/*.edd"/>
+	            <exclude name="**/*.eod"/>
+	            <exclude name="**/*.esd"/>
+	            <exclude name="**/*.etd"/>
+	            <exclude name="**/*.eud"/>
+	            <exclude name="**/*.urd"/>
+	            <exclude name="**/*.uml"/>
+	            <exclude name="**/*.ecore"/>
+	            <exclude name="**/*.java"/>
+	        </fileset>
+	    </copy>
+	</target>
+	
+	<target name="clean">
+	    <delete dir="${webcontent.path}/WEB-INF/classes"/>
+	</target>
+	
+    <target depends="clean, init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+    	<javac debug="true" debuglevel="${debuglevel}" destdir="${webcontent.path}/WEB-INF/classes" includeantruntime="false" source="${source}" target="${target}" encoding="UTF-8">
+            <src path="src"/>
+            <classpath refid="BK Online.classpath"/>
+        </javac>
+    </target>
+	
+	<target name="clean-test-classes">
+		<delete dir="${webcontent.path}/WEB-INF/classes/test"/>
+	</target>
+	
+	<!-- DEV WAR -->
+	<target name="war_bkonline_dev_build" description="Pack war to bkonline dev" depends="build-project, clean-test-classes">
+		<copy file="configs/dev/web.xml" todir="${webcontent.path}/WEB-INF/" overwrite="true"/>
+		<copy file="configs/dev/log4j.properties" todir="${webcontent.path}/WEB-INF/classes" overwrite="true"/>
+		<copy file="configs/dev/parameter.xml" todir="${webcontent.path}/WEB-INF" overwrite="true"/>
+		<copy file="configs/dev/parameter-extended.xml" todir="${webcontent.path}/WEB-INF" overwrite="true"/>
+		<copy file="configs/dev/barcode.jsp" todir="${webcontent.path}/jsp/security/" overwrite="true"/>
+		<delete file="${webcontent.path}/META-INF/context.xml"/>
+		
+	    <war destfile="configs/dev/bkonline_dev.war" basedir="${webcontent.path}" needxmlfile="false"></war>
+	</target>
+	<target name="war_bkonline_prd_build" description="Pack war to bkonline prd" depends="build-project, clean-test-classes">
+		<copy file="configs/prd/web.xml" todir="${webcontent.path}/WEB-INF/" overwrite="true"/>
+		<copy file="configs/prd/log4j.properties" todir="${webcontent.path}/WEB-INF/classes" overwrite="true"/>
+		<copy file="configs/prd/parameter.xml" todir="${webcontent.path}/WEB-INF" overwrite="true"/>
+		<copy file="configs/prd/parameter-extended.xml" todir="${webcontent.path}/WEB-INF" overwrite="true"/>
+		<copy file="configs/prd/barcode.jsp" todir="${webcontent.path}/jsp/security/" overwrite="true"/>
+		<delete file="${webcontent.path}/META-INF/context.xml"/>
+			
+		<war destfile="configs/prd/bkonline.war" basedir="${webcontent.path}" needxmlfile="false"></war>
+	</target>
+</project>

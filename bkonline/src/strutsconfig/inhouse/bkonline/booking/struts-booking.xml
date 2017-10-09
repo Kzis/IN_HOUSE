@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="booking" namespace="/jsp/booking" extends="common">
+		<action name="*RoomBooking" class="com.cct.inhouse.bkonline.web.booking.roombooking.action.RoomBookingAction" method="{1}">
+            <result name="init">/jsp/booking/roombooking/addRoomBooking.jsp</result>
+            <result name="addEdit">/jsp/booking/roombooking/addRoomBooking.jsp</result>
+            <result name="mainpage" type="redirect">
+				<param name="location">${contextConfig.getURLContextBK()}/jsp/calendar/dashboard/initDashboard.action</param>
+			</result>
+        </action>
+	</package>
+</struts>

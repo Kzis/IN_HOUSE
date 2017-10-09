@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+ <package name="dashboard" namespace="/jsp/calendar" extends="common" >
+        <action name="*Dashboard" class="com.cct.inhouse.bkonline.web.calendar.dashboard.action.DashboardAction" method="{1}">
+             <result name="init">/jsp/calendar/dashboard/dashboard.jsp</result>
+             <result name="search">/jsp/calendar/dashboard/dashboard.jsp</result>
+        </action>
+	</package>
+</struts>

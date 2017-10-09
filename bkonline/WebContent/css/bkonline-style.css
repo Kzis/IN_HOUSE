@@ -1,0 +1,41 @@
+body {
+	width: auto;
+}
+
+TABLE.body_main, .notify.notify-top-full {
+	width: auto;
+}
+	
+div.dhx_cal_date {
+	margin-top: 30px;
+}
+	
+div.dhx_title_status_custom {
+	margin-top: 75px;
+}
+	
+div.dhx_cal_header, div.dhx_cal_data {
+	margin-top: 55px !important;
+}
+	
+@media screen and (min-width: 1150px){
+	body {
+		width: auto;
+	}
+	
+	TABLE.body_main, .notify.notify-top-full {
+		width: auto;
+	}
+	
+	div.dhx_cal_date {
+		margin-top: 0px;
+	}
+	
+	div.dhx_title_status_custom {
+		margin-top: 50px;
+	}
+	
+	div.dhx_cal_header, div.dhx_cal_data {
+		margin-top: 15px !important;
+	}
+}

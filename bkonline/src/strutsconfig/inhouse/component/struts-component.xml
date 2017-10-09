@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="component" namespace="/jsp/component" extends="common">
+		<action name="*Component" class="com.cct.inhouse.bkonline.web.component.action.ComponentAction" method="{1}">
+			<result name="init">/jsp/component/mainComponent.jsp</result>
+			<result name="gotoo">/jsp/component/${getPage()}.jsp</result>
+		</action>
+		
+		<action name="*Validate" class="com.cct.inhouse.bkonline.web.component.action.ValidateAction" method="{1}">
+			<result name="init">/jsp/component/mainValidate.jsp</result>
+			<result name="addEdit">/jsp/component/mainValidate.jsp</result>
+			<result name="invalidRequest">/jsp/component/mainValidate.jsp</result>
+		</action>
+	</package>
+</struts>
