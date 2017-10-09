@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_112"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/sit-common"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/sit-servervalidator"/>
+	<classpathentry kind="lib" path="lib/sit-common-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/sit-log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="lib/sit-util-1.19.jar"/>
+	<classpathentry kind="lib" path="lib/velocity-1.7.jar"/>
+	<classpathentry kind="lib" path="lib/xwork-core-2.3.16.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

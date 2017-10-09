@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<validatorConfig>
+    <validator>
+        <actionMethod>addRoomBooking</actionMethod>
+        <className>com.cct.inhouse.bkonline.web.booking.roombooking.action.RoomBookingAction</className>
+        <!-- String -->
+        <validatorWhat>
+        	<inputName>roomBooking.subject</inputName>
+            <condition>
+            	<validateType>requireInput</validateType>
+                <message>You must enter a value for subject.</message>
+            </condition>
+            <condition>
+                <validateType>stringLength</validateType>
+                <message>Subject length (5-10).</message>
+                <minLength>5</minLength>
+                <maxLength>10</maxLength>
+            </condition>
+        </validatorWhat>
+         
+         <!-- List > List -->
+        <validatorWhat>
+        	<inputName>roomBooking.listRoomClosed</inputName>
+        	<inputNameFormat>roomBooking.listRoomClosed[%s].%s</inputNameFormat>
+	        <validatorCollection>
+	        	<inputName>roomId</inputName>
+	            <condition>
+	            	<validateType>requireInput</validateType>
+	                <message>You must enter a list for roomId.</message>
+	            </condition>
+	        </validatorCollection>
+        </validatorWhat>
+        <validatorWhat>
+        	<inputName>roomBooking.listRoomClosed</inputName>
+        	<inputNameFormat>roomBooking.listRoomClosed[%s].%s</inputNameFormat>
+	        <validatorCollection>
+	        	<inputName>listRoom</inputName>
+	        	<inputNameFormat>[%s].%s</inputNameFormat>
+		        <validatorCollection>
+		        	<inputName>roomName</inputName>
+		            <condition>
+		            	<validateType>requireInput</validateType>
+		                <message>You must enter a list for roomName.</message>
+		            </condition>
+		        </validatorCollection>
+	        </validatorCollection>
+        </validatorWhat>
+         
+         <!-- Map > List -->
+         <validatorWhat>
+        	<inputName>roomBooking.mapRoomClosed</inputName>
+        	<inputNameFormat>roomBooking.mapRoomClosed['%s'].%s</inputNameFormat>
+	        <validatorCollection>
+	        	<inputName>roomId</inputName>
+	            <condition>
+	            	<validateType>requireInput</validateType>
+	                <message>You must enter a map for roomId.</message>
+	            </condition>
+	        </validatorCollection>
+        </validatorWhat>
+        <validatorWhat>
+        	<inputName>roomBooking.mapRoomClosed</inputName>
+        	<inputNameFormat>roomBooking.mapRoomClosed['%s'].%s</inputNameFormat>
+	        <validatorCollection>
+	        	<inputName>listRoom</inputName>
+	        	<inputNameFormat>[%s].%s</inputNameFormat>
+		        <validatorCollection>
+		        	<inputName>roomName</inputName>
+		            <condition>
+		            	<validateType>requireInput</validateType>
+		                <message>You must enter a list for roomName.</message>
+		            </condition>
+		        </validatorCollection>
+	        </validatorCollection>
+        </validatorWhat>
+       
+        <!-- Map > Map  -->
+         <validatorWhat>
+        	<inputName>roomBooking.mapRoomClosed</inputName>
+        	<inputNameFormat>roomBooking.mapRoomClosed['%s'].%s</inputNameFormat>
+	        <validatorCollection>
+	        	<inputName>roomId</inputName>
+	            <condition>
+	            	<validateType>requireInput</validateType>
+	                <message>You must enter a map for roomId.</message>
+	            </condition>
+	        </validatorCollection>
+        </validatorWhat>
+        <validatorWhat>
+        	<inputName>roomBooking.mapRoomClosed</inputName>
+        	<inputNameFormat>roomBooking.mapRoomClosed['%s'].%s</inputNameFormat>
+	        <validatorCollection>
+	        	<inputName>mapRoom</inputName>
+	        	<inputNameFormat>['%s'].%s</inputNameFormat>
+		        <validatorCollection>
+		        	<inputName>roomName</inputName>
+		            <condition>
+		            	<validateType>requireInput</validateType>
+		                <message>You must enter a map for roomName.</message>
+		            </condition>
+		        </validatorCollection>
+	        </validatorCollection>
+        </validatorWhat>
+        
+        <!--  -->
+        <validatorWhat>
+        	<inputName>roomBooking.detail</inputName>
+            <condition>
+            	<validateType>requireInput</validateType>
+                <message>You must enter a value for detail.</message>
+            </condition>
+        </validatorWhat>
+        
+    </validator>
+    <validator>
+        <actionMethod>editRoomBooking</actionMethod>
+        <className>com.cct.inhouse.bkonline.web.booking.roombooking.action.RoomBookingAction</className>
+        <validatorWhat>
+        	<inputName>roomBooking.detail</inputName>
+            <condition>
+            	<validateType>stringLength</validateType>
+                <message>Detail length (5-10).</message>
+            	<minLength>5</minLength>
+                <maxLength>10</maxLength>
+            </condition>
+        </validatorWhat>
+    </validator>
+</validatorConfig>

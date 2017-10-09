@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<!DOCTYPE hibernate-configuration PUBLIC
+  "-//Hibernate/Hibernate Configuration DTD//EN"
+  "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+	<session-factory>
+	
+		<!-- EVR database configuration -->
+	<!--  
+		<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="connection.url">jdbc:oracle:thin:@10.100.70.99:1521:RFIDDB</property>
+		<property name="connection.username">EVR_FLEET</property>
+		<property name="connection.password">EVR_FLEET</property>
+		<property name="show_sql">false</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="pool_maxactive">20</property>
+		<property name="pool_maxidle">2</property>
+		<property name="pool_maxwait">-1</property>
+		<property name="connectionpool">true</property>
+		-->
+	
+		<property name="connection.driver_class">com.ibm.db2.jcc.DB2Driver</property>
+		<property name="connection.url">jdbc:db2://10.100.70.188:50004/APP</property>
+		<property name="connection.username">db2inst1</property>
+		<property name="connection.password">maglib</property>
+		<property name="show_sql">false</property>
+		<property name="dialect">org.hibernate.dialect.DB2Dialect</property>
+		<property name="pool_maxactive">20</property>
+		<property name="pool_maxidle">2</property>
+		<property name="pool_maxwait">-1</property>
+		<property name="connectionpool">true</property>
+		
+		
+		
+		<!--  
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://127.0.0.1/template1?useUnicode=true&amp;characterEncoding=UTF-8</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">mysql</property>
+		<property name="show_sql">false</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="pool_maxactive">20</property>
+		<property name="pool_maxidle">2</property>
+		<property name="pool_maxwait">-1</property>
+		<property name="connectionpool">true</property>
+		-->
+
+	</session-factory>
+
+</hibernate-configuration>
